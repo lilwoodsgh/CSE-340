@@ -4,3 +4,168 @@
 *:after {
   box-sizing: border-box;
 }
+/* Base styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background-color: #fff;
+  color: #222;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 0 1rem;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.account-link {
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: #333;
+}
+
+.main-nav {
+  background-color: #111133;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.75rem;
+}
+
+.main-nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+}
+
+main h2 {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.hero-text h3 {
+  color: #0077cc;
+}
+
+.hero-text ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+
+.hero-text li {
+  margin: 0.25rem 0;
+}
+
+.btn {
+  background-color: #0077cc;
+  color: white;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.hero-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.upgrades h3,
+.reviews h3 {
+  margin-bottom: 1rem;
+}
+
+.upgrades-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.upgrades-grid li {
+  text-align: center;
+}
+
+.upgrades-grid img {
+  width: 60px;
+  height: 60px;
+  display: block;
+  margin: auto;
+}
+
+.upgrades-grid a {
+  display: block;
+  text-decoration: none;
+  color: #0077cc;
+  margin-top: 0.5rem;
+}
+
+.reviews ul {
+  padding-left: 1rem;
+}
+
+.site-footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #f0f0f0;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+/* Media query for larger screens */
+@media screen and (min-width: 768px) {
+  .hero {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .hero-text {
+    flex: 1;
+  }
+
+  .hero-image {
+    flex: 1;
+    max-width: 50%;
+  }
+
+  .details {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .upgrades,
+  .reviews {
+    width: 48%;
+  }
+}
