@@ -1,0 +1,159 @@
+/* Mobile-first styles */
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #e74c3c;
+  --accent-color: #3498db;
+  --light-color: #ecf0f1;
+  --dark-color: #2c3e50;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  color: var(--dark-color);
+  background: url(/images/site/checkerboard.jpg) no-repeat center center fixed;
+  background-size: cover;
+  margin: 0%;
+  padding: 0%;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.hero {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+}
+
+.hero-content {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.feature-card {
+  background-color: var(--light-color);
+  padding: 1rem;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.feature-card img {
+  max-width: 80px;
+  height: auto;
+}
+
+.reviews {
+  margin-bottom: 2rem;
+}
+
+.review-card {
+  background-color: var(--light-color);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+}
+
+/* Media queries for larger screens */
+@media screen and (min-width: 768px) {
+  .hero-content {
+    width: 50%;
+    background-color: var(--secondary-color);
+    top: 50%;
+    transform: translateY(-50%);
+    right: auto;
+    bottom: auto;
+  }
+
+  .features {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .feature-card {
+    flex: 1;
+  }
+
+  .reviews {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .review-card {
+    flex: 1;
+  }
+}
+#top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 0.5rem 1rem; /* adjust as needed */
+}
+
+#top-header .siteName a {
+  text-decoration: none;
+  color: #111; /* or whatever text color you prefer */
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+#top-header #tools a {
+  text-decoration: none;
+  color: #111; /* adjust for hover/active as desired */
+  font-size: 1rem;
+}
+
+/* Optional: on hover, change link color */
+#top-header a:hover {
+  color: #0078D7;
+}
+.main-nav {
+  background-color: rgb(4, 4, 4);
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #ccc; /* Optional subtle bottom border */
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;              /* horizontal layout */
+  justify-content: center;    /* center the links */
+  gap: 1.5rem;                /* space between links */
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.5rem 0.75rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #0078D7;
+}
