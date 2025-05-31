@@ -32,6 +32,8 @@ body {
 .container {
   width: 100%;
   padding: 1rem;
+  color: #ffff;
+
 }
 
 /* ====== HEADER ====== */
