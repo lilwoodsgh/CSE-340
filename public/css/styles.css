@@ -126,3 +126,30 @@ body {
 #top-header a:hover {
   color: #0078D7;
 }
+.main-nav {
+  background-color: white;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #ccc; /* Optional subtle bottom border */
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;              /* horizontal layout */
+  justify-content: center;    /* center the links */
+  gap: 1.5rem;                /* space between links */
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.5rem 0.75rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #0078D7;
+}
