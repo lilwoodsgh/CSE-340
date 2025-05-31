@@ -157,3 +157,8 @@ body {
 .nav-links li a:hover {
   color: #0078D7;
 }
+.main{
+  background: #ecf0f1;
+  border: 2px black;
+  border-radius: 2px 2px 2px 2px;
+}
