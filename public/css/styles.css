@@ -101,3 +101,28 @@ body {
     flex: 1;
   }
 }
+#top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 0.5rem 1rem; /* adjust as needed */
+}
+
+#top-header .siteName a {
+  text-decoration: none;
+  color: #111; /* or whatever text color you prefer */
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+#top-header #tools a {
+  text-decoration: none;
+  color: #111; /* adjust for hover/active as desired */
+  font-size: 1rem;
+}
+
+/* Optional: on hover, change link color */
+#top-header a:hover {
+  color: #0078D7;
+}
