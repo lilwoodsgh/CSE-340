@@ -14,13 +14,13 @@ body {
   margin: 0;
   padding: 1rem;
   color: var(--dark-color);
-  background: url(/images/site/checkerboard.jpg) no-repeat center center fixed;
+  background: white
   background-size: cover;
 }
 
 /* ====== PAGE WRAPPER ====== */
 .page-wrapper {
-  background: white;
+  background: url(/images/site/checkerboard.jpg) no-repeat center center fixed;
   margin: 0 auto;
   max-width: 1200px;
   border-radius: 4px;
