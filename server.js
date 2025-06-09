@@ -11,6 +11,15 @@ const env = require("dotenv").config()
 const app = express()
 const static = require("./routes/static")
 const baseController = require("./controllers/basecontroller")
+const utilities = require('./utilities'); // adjust path if needed
+
+// filepath: C:\Users\USER\CSE-340\server.js
+// ...existing code...
+function buildNav() {
+  // Your navigation building logic here
+  return '<nav>...</nav>';
+}
+// ...existing code...
 
 
 /* ***********************
@@ -19,6 +28,11 @@ const baseController = require("./controllers/basecontroller")
 app.set("view engine", "ejs")
 app.use(expressLayouts)
 app.set("layout", "./layouts/layout")// not at views root
+app.use(async (req, res, next) => {
+  res.locals.nav = await utilities.getNav(); // or buildNav()
+  next();
+});
+
 
 /* ***********************
  * Routes
