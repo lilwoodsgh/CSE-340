@@ -6,7 +6,7 @@ CREATE TYPE public.account_type AS ENUM
     ('Client', 'Employee', 'Admin');
 
 ALTER TYPE public.account_type
-    OWNER TO cse430_5qqy_user;
+    OWNER TO cse430;
 
 -- Table stucture for table "classification"
 CREATE TABLE public.classification(
@@ -78,8 +78,8 @@ VALUES   (
     'Camaro',
     '2018',
     'If you want to look cool this is the ar you need! This car has great performance at an affordable price. Own it today!',
-    '/images/vehicles/camaro.jpg',
-    '/images/vehicles/camaro-tn.jpg',
+    '/images/camaro.jpg',
+    '/images/camaro-tn.jpg',
     25000,
     101222,
     'Silver',

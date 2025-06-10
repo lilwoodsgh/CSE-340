@@ -12,14 +12,14 @@ const app = express()
 const static = require("./routes/static")
 const baseController = require("./controllers/basecontroller")
 const utilities = require('./utilities'); // adjust path if needed
+const inventoryRoute = require("./routes/inventoryroute")
 
-// filepath: C:\Users\USER\CSE-340\server.js
-// ...existing code...
+
 function buildNav() {
   // Your navigation building logic here
   return '<nav>...</nav>';
 }
-// ...existing code...
+
 
 
 /* ***********************
@@ -38,12 +38,43 @@ app.use(async (req, res, next) => {
  * Routes
  *************************/
 app.use(static)
+app.use("/inv", inventoryRoute)
 
 //Index route
 app.get("/", function(req, res){
   res.render("index", {title: "Home"})
 })
 app.get("/", baseController.buildHome)
+app.get("/", utilities.handleErrors(baseController.buildHome))
+
+
+// File Not Found Route - must be last route in list
+app.use(async (req, res, next) => {
+  next({status: 404, message: 'Sorry, we appear to have lost that page.'})
+})
+
+
+/* ***********************
+* Express Error Handler
+* Place after all other middleware
+*************************/
+app.use(async (err, req, res, next) => {
+  console.error("Global Error Handler:", err.message)
+
+  let nav = "<nav><a href='/'>Home</a></nav>"
+  try {
+    nav = await require("./utilities").getNav()
+  } catch (navErr) {
+    console.error("Navigation load failed:", navErr.message)
+  }
+
+  res.status(500).render("errors/error", {
+    title: "Server Error",
+    message: err.message,
+    nav
+  })
+})
+
 
 
 /* ***********************

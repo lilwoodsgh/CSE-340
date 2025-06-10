@@ -1,0 +1,12 @@
+<main class="vehicle-page">
+ <section class="vehicle-container">
+   <% if (title) { %>
+    <h1><%= title %></h1>
+ <% } else {
+  res.redirect('/')
+} %>
+
+<%# messages() %>
+<%- grid %>
+ </section>
+</main>
