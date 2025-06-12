@@ -13,12 +13,32 @@ const static = require("./routes/static")
 const baseController = require("./controllers/basecontroller")
 const utilities = require('./utilities'); // adjust path if needed
 const inventoryRoute = require("./routes/inventoryroute")
+const session = require("express-session")
+const pool = require('./database/')
+
 
 
 function buildNav() {
   // Your navigation building logic here
   return '<nav>...</nav>';
 }
+
+
+
+
+/* ***********************
+ * Middleware
+ * ************************/
+ app.use(session({
+  store: new (require('connect-pg-simple')(session))({
+    createTableIfMissing: true,
+    pool,
+  }),
+  secret: process.env.SESSION_SECRET,
+  resave: true,
+  saveUninitialized: true,
+  name: 'sessionId',
+}))
 
 
 
