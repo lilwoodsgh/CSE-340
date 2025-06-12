@@ -7,7 +7,7 @@ require("dotenv").config()
  * If - else will make determination which to use
  * *************** */
 let pool
-if (process.env.NODE_ENV == "development") {
+if (process.env.NODE_ENV == "postgresql://cse430:oZCgAhOf41KagoFsUz4IKDq2oSqRcFPL@dpg-d13lqdali9vc738n4g9g-a.oregon-postgres.render.com/cse430_vtdd") {
   pool = new Pool({
     connectionString: process.env.DATABASE_URL,
     ssl: {
