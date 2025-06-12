@@ -37,15 +37,6 @@ invModel.getVehicleById = async function (inv_id) {
 };
 
 
-const { Pool } = require('pg')
-
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false // Allow self-signed certificates on Render
-  }
-})
-
 
 module.exports = pool
 
