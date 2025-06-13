@@ -47,6 +47,7 @@ function buildNav() {
  *************************/
 app.set("view engine", "ejs")
 app.use(expressLayouts)
+app.use(express.static("public"))
 app.set("layout", "./layouts/layout")// not at views root
 app.use(async (req, res, next) => {
   res.locals.nav = await utilities.getNav(); // or buildNav()

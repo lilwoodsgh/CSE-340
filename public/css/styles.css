@@ -1,4 +1,3 @@
-/* ====== COLOR VARIABLES ====== */
 :root {
   --primary-color: #2c3e50;
   --secondary-color: #e74c3c;
@@ -7,7 +6,6 @@
   --dark-color: #2c3e50;
 }
 
-/* ====== BASE STYLES ====== */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
@@ -18,7 +16,6 @@ body {
   background-size: cover;
 }
 
-/* ====== PAGE WRAPPER ====== */
 .page-wrapper {
   background: white;
   margin: 0 auto;
@@ -28,7 +25,6 @@ body {
   overflow: hidden;
 }
 
-/* ====== CONTAINER ====== */
 .container {
   width: 94%;
   padding: 1rem;
@@ -65,18 +61,44 @@ body {
 
 /* ====== NAVIGATION ====== */
 .main-nav {
-  background-color: #000;
+  background-color: #333;
   padding: 0.5rem 1rem;
-  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.hamburger {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: block; /* show by default */
 }
 
 .nav-links {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: none; /* hidden by default */
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #444;
+  width: 200px;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.nav-links.active {
   display: flex;
-  justify-content: center;
-  gap: 1rem;
+}
+
+.nav-links li {
+  margin-bottom: 10px;
 }
 
 .nav-links li a {
@@ -90,6 +112,7 @@ body {
 
 .nav-links li a:hover {
   color: var(--accent-color);
+  text-decoration: underline;
 }
 
 /* ====== HERO SECTION ====== */
@@ -135,7 +158,7 @@ body {
   background-color: #217dbb;
 }
 
-/* ====== INFO SECTIONS: UPGRADES + REVIEWS ====== */
+/* ====== INFO SECTIONS ====== */
 .info-sections {
   display: flex;
   flex-direction: column;
@@ -196,7 +219,8 @@ footer {
   padding: 1rem;
   font-size: 0.9rem;
 }
-/* Inventory Grid Styles */
+
+/* ====== INVENTORY GRID ====== */
 .inv-display {
   list-style: none;
   display: grid;
@@ -248,6 +272,8 @@ footer {
   font-size: 1rem;
   color: var(--secondary-color);
 }
+
+/* ====== VEHICLE PAGES ====== */
 .vehicle-page {
   background: url('/images/hero.webp') no-repeat center center fixed;
   background-size: cover;
@@ -263,6 +289,27 @@ footer {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
+
+.vehicle-detail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.vehicle-detail img {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.vehicle-info {
+  flex: 1;
+  min-width: 250px;
+}
+
+/* ====== ERROR PAGES ====== */
 .error-container {
   padding: 4rem 1rem;
   background: url('/images/hero.webp') no-repeat center center;
@@ -312,26 +359,6 @@ footer {
   background-color: var(--secondary-color);
 }
 
-.vehicle-detail {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin: 2rem 0;
-}
-
-.vehicle-detail img {
-  max-width: 400px;
-  width: 100%;
-  border-radius: 8px;
-  object-fit: cover;
-}
-
-.vehicle-info {
-  flex: 1;
-  min-width: 250px;
-}
-
-
 /* ====== MEDIA QUERIES ====== */
 @media screen and (min-width: 768px) {
   .hero {
@@ -342,10 +369,8 @@ footer {
 
   .hero-content {
     position: static;
-    transform: none;
     width: 50%;
     background-color: var(--secondary-color);
-    color: white;
     padding: 1.5rem;
   }
 
@@ -370,7 +395,8 @@ footer {
   .review-card {
     flex: 1;
   }
-   .inv-display {
+
+  .inv-display {
     grid-template-columns: 1fr;
     padding: 1rem;
   }
@@ -381,5 +407,25 @@ footer {
 
   .inv-display h2 {
     font-size: 1rem;
+  }
+
+  /* Hide hamburger on large screens */
+  .hamburger {
+    display: none;
+  }
+
+  /* Show nav always on desktop */
+  .nav-links {
+    display: flex !important;
+    flex-direction: row;
+    position: static;
+    background-color: transparent;
+    padding: 0;
+    width: auto;
+    gap: 1rem;
+  }
+
+  .nav-links li {
+    margin-bottom: 0;
   }
 }

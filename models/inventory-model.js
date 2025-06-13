@@ -36,8 +36,6 @@ invModel.getVehicleById = async function (inv_id) {
   ).then(result => result.rows);
 };
 
-
-
 module.exports = pool
 
 
